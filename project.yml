@@ -1,0 +1,50 @@
+name: Kela
+options:
+  createWorkspace: true
+  deploymentTarget:
+    macOS: "14.0"
+configs:
+  Debug: debug
+  Release: release
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.example.Kela
+    SWIFT_VERSION: 5.9
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: 0.1.0
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+    INFOPLIST_FILE: Kela/Config/Info.plist
+    LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+packages: {}
+targets:
+  Kela:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: Kela
+        excludes:
+          - Config/Entitlements.plist
+    entitlements:
+      path: Kela/Config/Entitlements.plist
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.device.audio-input: true
+    preBuildScripts: []
+    postBuildScripts: []
+    settings:
+      base:
+        SUPPORTED_PLATFORMS: macosx
+        SDKROOT: macosx
+        MACOSX_DEPLOYMENT_TARGET: 14.0
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        OTHER_LDFLAGS: $(inherited)
+        OTHER_SWIFT_FLAGS: $(inherited)
+        OTHER_LDFLAGS[arch=*]: "$(inherited) -lsqlite3"
+    scheme:
+      testTargets: []

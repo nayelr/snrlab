@@ -1,0 +1,10 @@
+.DS_Store
+DerivedData/
+build/
+Kela.xcodeproj/
+Kela.xcworkspace/
+xcuserdata/
+Pods/
+Vendor/
+
+
