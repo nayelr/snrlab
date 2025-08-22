@@ -247,4 +247,3 @@ The current version includes stubs and interfaces for:
 ---
 
 **Kela** transforms your Mac into an intelligent, context-aware assistant that understands what you're doing and helps proactively. Hold Fn, speak naturally, and let Kela enhance your workflow with voice-driven AI assistance.
-
